@@ -1,0 +1,40 @@
+.container{
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* border: 2px solid firebrick; */
+}
+
+.timer__container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* width: 100%;
+  border: 2px solid violet; */
+}
+
+.timer__container h1{
+  margin-bottom: 0;
+}
+
+.timer__container p{
+  margin: 5px 0;
+  color: gray;
+}
+
+.card__container{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  /* border: 2px solid green; */
+
+}
+
+.card{
+  width: 8rem;
+  height: 10rem;
+  background-color: #ccc;
+  border-radius: 5px;
+}

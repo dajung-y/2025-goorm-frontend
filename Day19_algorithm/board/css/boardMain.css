@@ -1,0 +1,97 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background-color: rgb(255, 250, 252);
+}
+
+section{
+  max-width: 500px;
+  margin: 2rem auto;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+h1 {
+  text-align: center;
+}
+
+h3 {
+  margin-top: 0.5rem;
+}
+
+.title__container{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.content__container{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.title__container input,
+.content__container textarea{
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+
+.btn__container{
+  padding: 1rem 0;
+  text-align: center;
+}
+
+.btn{
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+#create-btn{
+  background-color: rgb(68, 159, 97);
+}
+
+#delete-btn{
+  background-color: rgb(227, 77, 77);
+}
+
+#no-post{
+  color: #bbb;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.post__item{
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 5px;
+  background-color: #fdfdfd;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.post__item .post__date{
+  color: #bbb;
+  font-size: small;
+  margin-bottom: 3px;
+}
+
+.post__item .post__title{
+  font-weight: bold;
+  font-size: large;
+  margin-bottom: 3px;
+}

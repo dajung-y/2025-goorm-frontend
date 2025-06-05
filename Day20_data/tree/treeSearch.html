@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>🌲 이진 탐색 트리 시각화</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      text-align: center;
+      background: #f0f4f8;
+      padding: 2rem;
+    }
+
+    input {
+      padding: 8px;
+      font-size: 16px;
+      margin: 0.5rem;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin: 0.5rem;
+      background: #1976D2;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #tree {
+      margin-top: 2rem;
+      position: relative;
+      height: 500px;
+    }
+
+    .node {
+      position: absolute;
+      background: #4CAF50;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      transition: 0.3s ease;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .highlight {
+      background: orange !important;
+    }
+
+    .line {
+      position: absolute;
+      width: 2px;
+      background: #aaa;
+      transform-origin: top left;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🌳 이진 탐색 트리 시각화 (비재귀 + 시각 탐색)</h2>
+
+  <input type="number" id="valueInput" placeholder="숫자 입력" />
+  <button onclick="insertNode()">삽입</button>
+
+  <input type="number" id="searchInput" placeholder="숫자 검색" />
+  <button onclick="searchNode()">탐색</button>
+
+  <div id="tree"></div>
+
+  <script>
+    class TreeNode {
+      constructor(value, x, y) {
+        this.value = value;
+        this.left = null;
+        this.right = null;
+        this.x = x;
+        this.y = y;
+        this.element = null;
+      }
+    }
+
+    class BSTVisualizer {
+      constructor(container) {
+        this.root = null;
+        this.container = container;
+        this.levelGap = 80;
+        this.nodeGap = 40;
+      }
+
+      insert(value) {
+        const newNode = new TreeNode(value, 0, 0);
+
+        if (!this.root) {
+          newNode.x = window.innerWidth / 2 - 30;
+          newNode.y = 20;
+          this.root = newNode;
+          this.renderNode(newNode);
+          return;
+        }
+
+        let current = this.root;
+        let depth = 1;
+        let offset = 200;
+
+        while (true) {
+          if (value === current.value) return; // 중복 무시
+
+          if (value < current.value) {
+            if (!current.left) {
+              newNode.x = current.x - offset;
+              newNode.y = current.y + this.levelGap;
+              current.left = newNode;
+              this.renderNode(newNode);
+              this.drawLine(current, newNode);
+              return;
+            }
+            current = current.left;
+          } else {
+            if (!current.right) {
+              newNode.x = current.x + offset;
+              newNode.y = current.y + this.levelGap;
+              current.right = newNode;
+              this.renderNode(newNode);
+              this.drawLine(current, newNode);
+              return;
+            }
+            current = current.right;
+          }
+          offset /= 1.7;
+          depth++;
+        }
+      }
+
+      renderNode(node) {
+        const div = document.createElement("div");
+        div.className = "node";
+        div.innerText = node.value;
+        div.style.left = `${node.x}px`;
+        div.style.top = `${node.y}px`;
+        this.container.appendChild(div);
+        node.element = div;
+      }
+
+      drawLine(parent, child) {
+        const x1 = parent.x + 20;
+        const y1 = parent.y + 20;
+        const x2 = child.x + 20;
+        const y2 = child.y + 20;
+
+        const dx = x2 - x1;
+        const dy = y2 - y1;
+        const length = Math.sqrt(dx * dx + dy * dy);
+        const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+
+        const line = document.createElement("div");
+        line.className = "line";
+        line.style.width = `${length}px`;
+        line.style.left = `${x1}px`;
+        line.style.top = `${y1}px`;
+        line.style.transform = `rotate(${angle}deg)`;
+        this.container.appendChild(line);
+      }
+
+      async search(value) {
+        let current = this.root;
+
+        while (current) {
+          this.highlight(current);
+          await this.sleep(800); // 시각적으로 멈춤
+          if (value === current.value) {
+            alert(`${value}를 찾았습니다!`);
+            return;
+          }
+          current = value < current.value ? current.left : current.right;
+        }
+
+        alert(`${value}는 트리에 없습니다.`);
+      }
+
+      highlight(node) {
+        document.querySelectorAll(".node").forEach(n => n.classList.remove("highlight"));
+        if (node && node.element) node.element.classList.add("highlight");
+      }
+
+      sleep(ms) {
+        return new Promise(resolve => setTimeout(resolve, ms));
+      }
+    }
+
+    const tree = new BSTVisualizer(document.getElementById("tree"));
+
+    function insertNode() {
+      const value = parseInt(document.getElementById("valueInput").value);
+      if (!isNaN(value)) {
+        tree.insert(value);
+      }
+    }
+
+    function searchNode() {
+      const value = parseInt(document.getElementById("searchInput").value);
+      if (!isNaN(value)) {
+        tree.search(value);
+      }
+    }
+  </script>
+</body>
+</html>

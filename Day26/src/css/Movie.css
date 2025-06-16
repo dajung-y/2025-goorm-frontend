@@ -1,0 +1,70 @@
+p{
+  padding: 0;
+  margin: 0;
+}
+.movie__container{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: center;
+  padding: 1rem;
+  width: 100%;
+  /* border: 1px solid black; */
+}
+
+article{
+  width: 13rem;
+  /* border: 1px solid black; */
+  margin-bottom: 2rem;
+  margin-top: 1rem;
+}
+
+.movie__card__num{
+  width: 100%;
+  padding: 0.3rem 0;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  background-color: rgb(250, 66, 66);
+  color: white;
+  font-size: large;
+  font-weight: bold;
+}
+
+.movie__card__img{
+  width: 100%;
+}
+
+.movie__card__img img{
+  width: 100%;
+}
+
+.info--title{
+  font-weight: bold;
+  padding: 0.2rem 0;
+}
+
+.info--rate{
+  padding: 0.2rem 0;
+  font-size: small;
+  font-weight: 600;
+  color: #6e6e6e;
+}
+
+.info--rate span{
+  color: black;
+
+}
+
+.info--date{
+  padding: 0.2rem 0;
+  font-size: small;
+}
+
+.purchase__btn{
+  padding: 0.3rem 1rem;
+  background-color: rgb(250, 66, 66);
+  border: none;
+  border-radius: 3px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}

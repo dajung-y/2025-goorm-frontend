@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function MovieCard({index, rank, movieNm, salesShare, openDt}) {
+export default function MovieCard({rank, movieNm, salesShare, openDt}) {
 
   const movieImg =[
     'https://img.cgv.co.kr/Movie/Thumbnail/Poster/000089/89315/89315_320.jpg',

@@ -4,9 +4,9 @@ import MovieCard from './MovieCard'
 export default function MovieComponent({movieList}) {
   return (
     <main className='movie__container'>
-      {movieList.map((movie, index) => (
+      {movieList.map((movie) => (
         <MovieCard
-          key={index}
+          key={movie.movieCd}
           rank={movie.rank}
           movieNm={movie.movieNm}
           salesShare={movie.salesShare}

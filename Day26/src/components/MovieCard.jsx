@@ -1,6 +1,9 @@
 import React from 'react'
+import { Link, useNavigate } from 'react-router-dom';
 
-export default function MovieCard({rank, movieNm, salesShare, openDt}) {
+export default function MovieCard({movieCd, rank, movieNm, salesShare, openDt}) {
+
+  const navigate = useNavigate();
 
   const movieImg =[
     'https://img.cgv.co.kr/Movie/Thumbnail/Poster/000089/89315/89315_320.jpg',
@@ -16,6 +19,14 @@ export default function MovieCard({rank, movieNm, salesShare, openDt}) {
   ]
 
   const imgIndex = rank-1;
+
+  const handleImageClick = () => {
+    navigate(`/moviedetail/${movieCd}`);
+  }
+
+  const handlePurchaseClick =() => {
+    navigate(`/ticket/${movieCd}`);
+  }
   return (
     <article>
       {/* 영화 순위 */}
@@ -23,8 +34,9 @@ export default function MovieCard({rank, movieNm, salesShare, openDt}) {
         <span>No.{rank}</span>
       </div>
       {/* 영화 */}
-      <div className='movie__card__img'>
-        <img src={movieImg[imgIndex]} alt='영화이미지' />
+      <div className='movie__card__img'
+           onClick={handleImageClick}>
+        <img src={movieImg[imgIndex]} alt={movieNm} />
       </div>
       <div className='movie__card__info'>
         <p className='info--title'>{movieNm}</p>
@@ -32,7 +44,10 @@ export default function MovieCard({rank, movieNm, salesShare, openDt}) {
         <p className='info--date'><span>{openDt}</span> 개봉</p>
       </div>
       <div className='movie__card__purchase'>
-        <button className='purchase__btn'>예매하기</button>
+        <button className='purchase__btn'
+                onClick={handlePurchaseClick}>
+        예매하기
+        </button>
       </div>
       
     </article>

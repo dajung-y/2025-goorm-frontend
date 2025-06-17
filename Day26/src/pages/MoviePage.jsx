@@ -15,7 +15,7 @@ export default function MoviePage() {
     async function boxOffice() {
       try{
         const res = await axios.get(apiUrl);
-        console.log(res.data)
+        // console.log(res.data) 
         setMovieList(res.data.boxOfficeResult.dailyBoxOfficeList);
       } catch(err) {
         console.error(`error: ${err}`);

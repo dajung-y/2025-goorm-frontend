@@ -7,6 +7,7 @@ export default function MovieComponent({movieList}) {
       {movieList.map((movie) => (
         <MovieCard
           key={movie.movieCd}
+          movieCd={movie.movieCd}
           rank={movie.rank}
           movieNm={movie.movieNm}
           salesShare={movie.salesShare}

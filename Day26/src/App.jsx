@@ -1,13 +1,18 @@
+import { Route, Routes } from "react-router-dom"
 import MoviePage from "./pages/MoviePage"
+import MovieDetailPage from "./pages/MovieDetailPage"
+import TicketPage from "./pages/TicketPage"
 
 
 function App() {
 
 
   return (
-    <>
-      <MoviePage />
-    </>
+    <Routes>
+      <Route path="/movies" element={<MoviePage />}/>
+      <Route path="/moviedetail/:movieCd" element={<MovieDetailPage />} />
+      <Route path="/ticket/:movieCd" element={<TicketPage />} />
+    </Routes>
   )
 }
 

@@ -56,7 +56,7 @@ export default function Cospro3Test9() {
       </div>
       {/* 출력 */}
       { result!==null && (
-        <p className='mt-2'>주차장에는 {result}대 들어올 수 있습니다</p>
+        <p className='mt-2'>주차장에는 <b>{result}</b>대 들어올 수 있습니다</p>
       )}
     </section>
   )

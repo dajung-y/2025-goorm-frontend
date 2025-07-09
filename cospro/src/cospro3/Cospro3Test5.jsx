@@ -78,7 +78,7 @@ export default function Cospro3Test5() {
         </button>
         {/* 출력 */}
         {result !==null && (
-          <p className='mt-2'>총 교통비는 {result.toLocaleString()}원 입니다</p>
+          <p className='mt-2'>총 교통비는 <b>{result.toLocaleString()}</b>원 입니다</p>
         )}
       </div>
     </section>

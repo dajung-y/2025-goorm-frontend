@@ -37,7 +37,7 @@ export default function Cospro3Test10() {
       </div>
       {/* 출력 */}
       { result!==null && (
-        <p className='mt-2'>총 {result}개 입니다</p>
+        <p className='mt-2'>총 <b>{result}</b>개 입니다</p>
       )}
     </section>
   )

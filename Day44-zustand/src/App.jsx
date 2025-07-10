@@ -3,16 +3,20 @@ import TodoInput from './components/TodoInput'
 import TodoList from './components/TodoList'
 import PostInput from './components/PostInput'
 import PostList from './components/PostList'
+import { Route, Routes } from 'react-router-dom'
+import MainPage from './pages/MainPage'
+import LoginPage from './pages/LoginPage'
+import JoinPage from './pages/JoinPage'
+import MyPage from './pages/MyPage'
 
 export default function App() {
   return (
-    <div>
-      {/* <TodoInput />
-      <TodoList /> */}
-
-      <PostInput />
-      <PostList />
-    </div>
+    <Routes>
+      <Route path='/' element={<MainPage />} />
+      <Route path='/login' element={<LoginPage />} />
+      <Route path='/join' element={<JoinPage />} />
+      <Route path='/mypage' element={<MyPage />} />
+    </Routes>
   )
 }
 

@@ -1,0 +1,24 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "name": "MacBook Pro 16",
+      "price": 3690000
+    },
+    {
+      "id": 2,
+      "name": "iPhone 15 Pro",
+      "price": 1550000
+    },
+    {
+      "id": 3,
+      "name": "Apple Watch Series 9",
+      "price": 599000
+    },
+    {
+      "id": 4,
+      "name": "AirPods Pro 2",
+      "price": 359000
+    }
+  ]
+}

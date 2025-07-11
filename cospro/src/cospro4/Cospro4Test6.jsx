@@ -8,8 +8,14 @@ export default function Cospro4Test6() {
   const handleGetPoint = (e) => {
     e.preventDefault();
     setPoints(Number(points));
+    if(points<1000){
+      alert('1000포인트 이상부터 사용 가능합니다');
+      setPoints('');
+      return ;
+    }
     const result = points-(points%100);
     setAvailablePoints(result);
+    setPoints('');
   }
   return (
     <section className='m-4 p-4 w-2xl bg-fuchsia-50 rounded-2xl'>

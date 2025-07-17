@@ -2,7 +2,7 @@
 
 import { create } from "zustand";
 
-export const useClupFormStore = create((set) => ({
+export const useClubFormStore = create((set) => ({
   formData: {},
   currentStep: 0,
   // 입력 데이터 저장
@@ -17,5 +17,8 @@ export const useClupFormStore = create((set) => ({
   // 이전 단계로 이동
   prevStep: () => set((state) => ({
     currentStep: state.currentStep -1
+  })),
+  firstStep: () => set(() => ({
+    currentStep: 0
   })),
 }));

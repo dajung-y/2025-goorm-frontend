@@ -2,7 +2,7 @@ import React from 'react'
 import { Controller, useFormContext } from 'react-hook-form'
 import Select from 'react-select';
 
-const clupOptions = [
+const clubOptions = [
   {label:'축구 동아리', value:'football'},
   {label:'독서 동아리', value: 'book'},
   {label:'제빵 동아리', value: 'backing'},
@@ -13,7 +13,7 @@ const extraOptions = [
   {label: '스터디', value: 'study'},
   {label: '운동', value:'exercise'}
 ]
-export default function Step2_ClupSelection() {
+export default function Step2_ClubSelection() {
   const {control, register} = useFormContext();
   return (
     <section>
@@ -21,12 +21,12 @@ export default function Step2_ClupSelection() {
       <div className='mb-2'>
         <label className='block'>동아리 선택</label>
         <Controller
-          name='clup'
+          name='club'
           control={control}
           render={({field}) => (
             <Select 
               {...field}
-              options={clupOptions}
+              options={clubOptions}
               isClearable
             />
           )}

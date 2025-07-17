@@ -1,17 +1,17 @@
 import React from 'react'
 import { FormProvider, useForm } from 'react-hook-form'
 import Step1 from './Step1_BasicInfo';
-import Step2 from './Step2_ClupSelection';
+import Step2 from './Step2_ClubSelection';
 import Step3 from './Step3_Introduction';
 import Step4 from './Step4_Preview';
-import { useClupFormStore } from '../../stores/clupFormStore';
+import { useClubFormStore } from '../../stores/clubFormStore';
 
 const steps = [Step1, Step2, Step3, Step4];
 
 export default function MultiForm() {
 
   const methods = useForm();
-  const {formData, currentStep, setFormData, nextStep, prevStep} = useClupFormStore();
+  const {formData, currentStep, setFormData, nextStep, prevStep, firstStep} = useClubFormStore();
   const CurrentComponent = steps[currentStep];
   const onSubmit = (data) => {
     console.log(JSON.stringify(data,null,2));
@@ -21,6 +21,7 @@ export default function MultiForm() {
     } else{
       console.log('제출됨: ', {...formData,...data});
       alert('신청폼이 제출되었습니다');
+      firstStep();
     }
   }
   return (

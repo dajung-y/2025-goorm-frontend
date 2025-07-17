@@ -1,10 +1,10 @@
 import React from 'react'
-import { useClupFormStore } from '../../stores/clupFormStore'
+import { useClubFormStore } from '../../stores/clubFormStore'
 
 export default function Step4_Preview() {
-  const {formData} = useClupFormStore();
+  const {formData} = useClubFormStore();
   return (
-    <section>
+    <section className='flex flex-col space-y-2'>
       <div>
         <h2 className='text-xl font-bold'>기본 정보</h2>
         <p>이름: {formData.name}</p>
@@ -13,10 +13,15 @@ export default function Step4_Preview() {
       </div>
       <div>
         <h2 className='text-xl font-bold'>희망 동아리</h2>
-        <p>동아리 선택: {formData.club} </p>
-        <p>부가활동: </p>
+        <p>동아리 선택: {formData.club.label} </p>
+        <p>부가활동: {formData.extra.map((e) => (
+          <span>{e} </span>
+        ))}</p>
       </div>
-
+      <div>
+        <h2 className='text-xl font-bold'>자기소개</h2>
+        <p>{formData.introduction}</p>
+      </div>
     </section>
   )
 }

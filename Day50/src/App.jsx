@@ -7,17 +7,24 @@ import useUser from './components/customHook/useUser';
 import ReactQueryTest1 from './components/reactquery/ReactQueryTest1';
 import ReactQueryTest2 from './components/reactquery/ReactQueryTest2';
 import ReactQueryTest3 from './components/reactquery/ReactQueryTest3';
-
+import MainPage from './blog/pages/MainPage';
+import { Route, Routes } from 'react-router-dom';
+import PostCreatePage from './blog/pages/PostCreatePage';
+import PostDetailPage from './blog/pages/PostDetailPage';
+import Header from './blog/components/Header';
 
 export default function App() {
 
-
   return (
     <>
-      {/* <ReactHookTest1 /> */}
-      {/* <ReactHookTest2 /> */}
-      <ReactQueryTest3 />
+      <Header />
+      <Routes>
+        <Route path='/' element={<MainPage />} />
+        <Route path='/create' element={<PostCreatePage />} />
+        <Route path='/post/:id' element={<PostDetailPage />} />
+      </Routes>
     </>
+
   )
 }
 

@@ -14,6 +14,9 @@ export default function MainPage() {
         <Link to='/cospro5'>
           <span className='text-3xl font-semibold underline'>COSPRO 5차 문제</span>
         </Link>
+        <Link to='/cospro6'>
+          <span className='text-3xl font-semibold underline'>COSPRO 6차 문제</span>
+        </Link>
       </div>
 
     </main>

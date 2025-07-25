@@ -1,0 +1,24 @@
+$theme: dark;
+
+.box{
+  padding: 1.5rem;
+  @if $theme == light{
+    background-color: white;
+    color: black;
+  }
+  @else if $theme == dark{
+    background-color: #111;
+    color: white;
+  }
+  @else{
+    background-color: gray;
+    color: white;
+  }
+}
+
+@for $num from 1 through 5{
+  .box-#{$num}{
+    width: 3rem;
+    height: 1rem * $num;
+  }
+}

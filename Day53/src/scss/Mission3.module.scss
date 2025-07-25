@@ -1,0 +1,12 @@
+$headings:(
+  h1: (3rem, #008220),
+  h2: (2.5rem, #009e27),
+  h3: (2rem, #00c331)
+);
+
+@each $tag,$h in $headings{
+  .heading-#{$tag}{
+    font-size: nth($h,1);
+    color: nth($h,2);
+  }
+}

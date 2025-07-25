@@ -1,0 +1,18 @@
+.btn{
+  padding: 0.5rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: bold;
+  border: none;
+}
+
+.btn-primary{
+  @extend .btn;
+  background-color: #2baaff;
+  color:white;
+}
+
+
+// 상속 (Extend)
+// - scss에서 가장 강력한 무기중 하나
+// - 기존 클래스의 스타일을 그대로 가져와서 다른 클래스에 붙여서 상속
+// - @extend

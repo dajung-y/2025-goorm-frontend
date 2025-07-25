@@ -1,0 +1,40 @@
+@mixin button-style($bg-color){
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background-color: $bg-color;
+  cursor: pointer;
+
+  &:hover{
+    opacity: 0.7;
+  }
+}
+
+.btn{
+  font-size: 1rem;
+  margin-right: 1rem;
+}
+
+.primary{
+  @include button-style(rgb(36, 180, 252))
+}
+.danger{
+  @include button-style(rgb(250, 70, 70))
+}
+
+.wrapper{
+  padding: 2.5rem;
+  text-align: center;
+  background: #ccc;
+}
+
+// 재사용가능한 스타일 블록
+// 필요한 곳에 @include로 불러와서 씀
+// &
+// 바깥 부모 셀렉터 가리킴
+
+// 파일명.module.scss
+// 모듈 방식으로 변경했을 때 일반 css 먹히지 않음
+// css 클래스 이름이 일반 문자열이 아니라 js 객체로 import 됨
+// 각 클래스명이 고유해져 이름 충돌없이 사용 가능

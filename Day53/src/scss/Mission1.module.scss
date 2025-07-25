@@ -1,0 +1,26 @@
+@mixin btn{
+  background-color: rgb(61, 113, 255);
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  margin: 0.5rem;
+  cursor: pointer;
+}
+
+@mixin size($p, $f){
+  padding: $p;
+  font-size: $f;
+}
+
+.btn-sm{
+  @include btn;
+  @include size(0.5rem, 1rem);
+}
+.btn-md{
+  @include btn;
+  @include size(1rem, 2rem);
+}
+.btn-lg{
+  @include btn;
+  @include size(1.5rem, 3rem);
+}

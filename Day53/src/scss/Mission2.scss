@@ -1,0 +1,14 @@
+.card{
+  margin: 0.5rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 1rem;
+}
+
+@for $i from 1 through 4 {
+  .card-#{$i}{
+    @extend .card;
+    width: 2rem + (1* $i);
+    background-color: lighten(orange , $i * 10%);
+  }
+}

@@ -1,0 +1,13 @@
+// 브라우저마다 기본으로 제공하는 여백, 패딩, 폰트 사이즈 등 스타일 차이 제거
+
+*{
+  margin: 0;
+  padding: 0;
+  // 너비, 높 계산시 테두리와 패딩 포함
+  box-sizing: border-box;
+}
+
+/*
+라이브러리
+PostCss, normalize, sanitize.css, mordern-css-reset
+*/

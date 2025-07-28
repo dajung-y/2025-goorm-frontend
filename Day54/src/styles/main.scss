@@ -1,0 +1,10 @@
+// 가장 많이 사용하는 것은 main.jsx
+
+@use './reset';
+@use './variables';
+@use './mixins';
+
+
+body{
+  font-family: variables.$font-base;
+}

@@ -1,0 +1,10 @@
+@use './variables' as vars;
+
+@mixin flex-center($direction:row){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: center;
+  align-items: center;
+  padding: vars.$padding-base;
+}
+

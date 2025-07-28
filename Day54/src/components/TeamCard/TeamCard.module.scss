@@ -1,0 +1,65 @@
+@use '../../styles/mixins' as mixins;
+@use '../../styles/variables' as vars;
+
+.card{
+  @include mixins.flex-center(column);
+  border: 1px solid vars.$primary-color;
+  border-radius: 10px;
+  padding: vars.$padding-base;
+  width: 200px;
+  text-align: center;
+  background-color: #ccc;
+  transition: transform 0.2s ease;
+  &:hover{
+    transform: translateY(-5px);
+  }
+}
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+}
+
+.name {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: vars.$primary-color;
+}
+
+.role {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 768px) {
+  .card{
+    width: 100%;
+  }
+}
+// 실무에서는 변수 사용 패턴을 사용한다.
+// @use 별칭이나 경로명으로 접근 할 수있도록 별명
+// @import를 사용하면 네이밍 충돌이 발생할 수있기 때문에 
+// @use을 권장한다.
+// @use '../../styles/variables' as vars;
+// @use '../../styles/mixins'    as mixins;
+
+// .card{
+//   @include mixins.flext-center(column);
+
+//   // 변수로 변경
+//   border:           vars.$card-border;
+//   border-radius:    vars.$card-radius;
+//   padding:          vars.$padding-base;
+//   width:            vars.$card-width;
+//   text-align:       center;
+//   background:       vars.$card-bg-color;
+//   transition:       transform vars.$card-transition-time ease;
+
+//   &:hover{
+//     //음수 값 일경우에는 변수에 있는 px앞에 -를 붙여도 되지만 변수 자체를 
+//     // 음수로 선언해도 된다.
+//     transform:  translateY(-vars.$card-hover-offset);
+//   }
+
+// }

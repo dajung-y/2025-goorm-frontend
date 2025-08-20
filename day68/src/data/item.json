@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "name": "자바스크립트 완벽 가이드",
+    "price": 35000,
+    "author": "데이비드 플래너건",
+    "pages": 1096
+  },
+  {
+    "id": 2,
+    "name": "리액트를 다루는 기술",
+    "price": 30000,
+    "author": "김민준",
+    "pages": 864
+  },
+  {
+    "id": 3,
+    "name": "클린 코드",
+    "price": 32000,
+    "author": "로버트 마틴",
+    "pages": 584
+  },
+  {
+    "id": 4,
+    "name": "타입스크립트 프로그래밍",
+    "price": 28000,
+    "author": "보리스 체르니",
+    "pages": 416
+  },
+  {
+    "id": 5,
+    "name": "Node.js 교과서",
+    "price": 33000,
+    "author": "조현영",
+    "pages": 720
+  },
+  {
+    "id": 6,
+    "name": "아이폰 15 Pro",
+    "price": 1200000,
+    "brand": "Apple",
+    "warrantyMonths": 12
+  },
+  {
+    "id": 7,
+    "name": "갤럭시 S24 Ultra",
+    "price": 1100000,
+    "brand": "Samsung",
+    "warrantyMonths": 24
+  },
+  {
+    "id": 8,
+    "name": "맥북 프로 16인치",
+    "price": 2500000,
+    "brand": "Apple",
+    "warrantyMonths": 12
+  },
+  {
+    "id": 9,
+    "name": "아이패드 프로",
+    "price": 900000,
+    "brand": "Apple",
+    "warrantyMonths": 12
+  },
+  {
+    "id": 10,
+    "name": "LG 그램 17",
+    "price": 1800000,
+    "brand": "LG",
+    "warrantyMonths": 36
+  },
+  {
+    "id": 11,
+    "name": "스타벅스 텀블러",
+    "price": 25000
+  },
+  {
+    "id": 12,
+    "name": "에어팟 케이스",
+    "price": 15000
+  }
+]
